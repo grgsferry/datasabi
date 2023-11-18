@@ -1,6 +1,6 @@
-const express = require("express");
+import express from "express";
 const app = express();
-const serverless = required("serverless-http");
+import serverless from "serverless-http";
 
 const serviceRouter = express.Router({ mergeParams: true });
 
