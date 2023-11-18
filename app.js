@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
-import serverless from "serverless-http";
+const serverless = required("serverless-http");
 
-var serviceRouter = express.Router({ mergeParams: true });
+const serviceRouter = express.Router({ mergeParams: true });
 
 const port = 3000;
 
