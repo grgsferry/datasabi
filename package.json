@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "netlify-lambda build express",
+    "start": "nodemon server-local.js"
   },
   "author": "",
   "license": "ISC",
