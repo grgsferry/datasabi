@@ -15,7 +15,7 @@ app.use("/dist", express.static(__dirname + "/dist"));
 app.use("/src", express.static(__dirname + "/src"));
 app.use("/views", express.static(__dirname + "/views"));
 
-app.set("views", path.join(__dirname, "views"));
+app.set("views", express.static(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
