@@ -2,12 +2,9 @@
   "name": "datasabi",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/netlify-lambda serve src",
-    "build": "CI='' npm run build"
+    "tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "author": "",
   "license": "ISC",
