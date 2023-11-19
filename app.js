@@ -14,6 +14,7 @@ const port = 3000;
 // app.use(express.static("src"));
 app.use("/dist", express.static(__dirname + "/dist"));
 app.use("/src", express.static(__dirname + "/src"));
+app.use("/views", express.static(__dirname + "/views"));
 
 app.set("view engine", "ejs");
 
