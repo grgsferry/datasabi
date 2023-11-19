@@ -19,10 +19,6 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/dist/index.html"));
 });
 
-app.get("/home", (req, res) => {
-  res.sendFile(path.join(__dirname + "/dist/index.html"));
-});
-
 app.get("/about", (req, res) => {
   res.status(200).send("about");
 });
