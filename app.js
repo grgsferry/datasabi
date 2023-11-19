@@ -12,8 +12,8 @@ const serviceRouter = express.Router({ mergeParams: true });
 const port = 3000;
 
 app.use("/dist", express.static(__dirname + "/dist"));
-app.use("/src", express.static(__dirname + "/src"));
-app.use("/views", express.static(__dirname + "/views"));
+app.use("/src", express.static(__dirname + "/dist/src"));
+app.use(express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/dist/index.html"));
