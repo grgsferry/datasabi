@@ -1,11 +1,11 @@
 import express from "express";
 import serverless from "serverless-http";
 import { fileURLToPath } from "url";
-import { dirname } from "path";
+import path from "path";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.dirname(__filename);
 
 const serviceRouter = express.Router({ mergeParams: true });
 
@@ -15,23 +15,19 @@ app.use("/dist", express.static(__dirname + "/dist"));
 app.use("/src", express.static(__dirname + "/src"));
 app.use("/views", express.static(__dirname + "/views"));
 
-app.set("view engine", "ejs");
-
 app.get("/", (req, res) => {
-  res.render("index");
+  res.sendFile(path.join(__dirname + "/views/index.html"));
 });
 
 app.get("/home", (req, res) => {
-  res.render("index");
+  res.sendFile(path.join(__dirname + "/views/index.html"));
 });
 
 app.get("/about", (req, res) => {
-  //   res.render("about");
   res.status(200).send("about");
 });
 
 app.get("/portfolios", (req, res) => {
-  //   res.render("portfolios");
   res.status(200).send("porto");
 });
 
@@ -46,4 +42,3 @@ app.use("/services", serviceRouter);
 // });
 
 export const handler = serverless(app);
-// test
