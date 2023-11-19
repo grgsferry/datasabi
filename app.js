@@ -16,11 +16,11 @@ app.use("/src", express.static(__dirname + "/src"));
 app.use("/views", express.static(__dirname + "/views"));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname + "/views/index.html"));
+  res.sendFile(path.join(__dirname + "/dist/index.html"));
 });
 
 app.get("/home", (req, res) => {
-  res.sendFile(path.join(__dirname + "/views/index.html"));
+  res.sendFile(path.join(__dirname + "/dist/index.html"));
 });
 
 app.get("/about", (req, res) => {
