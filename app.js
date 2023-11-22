@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/about", (req, res) => {
-  res.status(200).send("about");
+  res.sendFile(path.join(__dirname + "/dist/about.html"));
 });
 
 app.get("/portfolios", (req, res) => {
@@ -33,8 +33,8 @@ serviceRouter.route("/:serviceId").get(function (req, res) {
 
 app.use("/services", serviceRouter);
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`);
-// });
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
 
-export const handler = serverless(app);
+// export const handler = serverless(app);
