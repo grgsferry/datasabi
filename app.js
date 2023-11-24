@@ -24,7 +24,7 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/portfolios", (req, res) => {
-  res.status(200).send("porto");
+  res.sendFile(path.join(__dirname + "/dist/portfolios.html"));
 });
 
 serviceRouter.route("/:serviceId").get(function (req, res) {
