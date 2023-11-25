@@ -33,8 +33,8 @@ serviceRouter.route("/:serviceId").get(function (req, res) {
 
 app.use("/services", serviceRouter);
 
-// app.listen(port, () => {
-//   console.log(`Example app listening on port ${port}`);
-// });
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
 
-export const handler = serverless(app);
+// export const handler = serverless(app);
