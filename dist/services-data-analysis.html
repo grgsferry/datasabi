@@ -22,30 +22,31 @@
             class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
             aria-controls="navbar-default"
             aria-expanded="false"
+            onclick="toggleNavbar()"
           >
             <span class="sr-only">Open main menu</span>
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
             </svg>
           </button>
-          <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul class="flex">
-              <li class="mr-8 text-black text-lg font-semibold">
+          <div class="hidden w-full md:block md:w-auto mt-4 sm:my-auto" id="navbar-default">
+            <ul class="flex space-x-8">
+              <li class="text-black text-sm sm:text-lg font-semibold">
                 <button class="group relative">
                   <a href="/about">About<span class="absolute inset-x-0 -bottom-1 h-1 bg-gradient-to-r from-ds-yellow via-ds-green-2 to-ds-purple opacity-0 transition group-hover:opacity-100"></span></a>
                 </button>
               </li>
-              <li class="mr-8 text-black text-lg font-semibold">
+              <li class="text-black text-sm sm:text-lg font-semibold">
                 <button class="group relative">
                   <a href="/#services">Services<span class="absolute inset-x-0 -bottom-1 h-1 bg-gradient-to-r from-ds-yellow via-ds-green-2 to-ds-purple opacity-0 transition group-hover:opacity-100"></span></a>
                 </button>
               </li>
-              <li class="mr-8 text-black text-lg font-semibold">
+              <li class="text-black text-sm sm:text-lg font-semibold">
                 <button class="group relative">
                   <a href="/portfolios">Portfolios<span class="absolute inset-x-0 -bottom-1 h-1 bg-gradient-to-r from-ds-yellow via-ds-green-2 to-ds-purple opacity-0 transition group-hover:opacity-100"></span></a>
                 </button>
               </li>
-              <li class="text-black text-lg font-semibold">
+              <li class="text-black text-sm sm:text-lg font-semibold">
                 <button class="group relative">
                   <a href="/#contact-us">Contact Us<span class="absolute inset-x-0 -bottom-1 h-1 bg-gradient-to-r from-ds-yellow via-ds-green-2 to-ds-purple opacity-0 transition group-hover:opacity-100"></span></a>
                 </button>
@@ -136,7 +137,12 @@
     <footer class="flex flex-col justify-center bg-gradient-to-r from-ds-yellow via-ds-green-2 to-ds-purple py-4 px-4 md:px-0 mt-auto">
       <p class="text-white text-center">Copyright © 2023 Datasabi - All Rights Reserved.</p>
     </footer>
+
+    <script>
+      function toggleNavbar() {
+        var navbar = document.getElementById("navbar-default");
+        navbar.classList.toggle("hidden");
+      }
+    </script>
   </body>
 </html>
-
-<!-- test deployment -->
