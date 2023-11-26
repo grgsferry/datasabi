@@ -7,8 +7,6 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const serviceRouter = express.Router({ mergeParams: true });
-
 const port = 3000;
 
 app.use("/dist", express.static(__dirname + "/dist"));
@@ -27,11 +25,17 @@ app.get("/portfolios", (req, res) => {
   res.sendFile(path.join(__dirname + "/dist/portfolios.html"));
 });
 
-serviceRouter.route("/:serviceId").get(function (req, res) {
-  res.status(200).send("hello user " + req.params.serviceId);
+app.get("/services-data-analysis", (req, res) => {
+  res.sendFile(path.join(__dirname + "/dist/services-data-analysis.html"));
 });
 
-app.use("/services", serviceRouter);
+app.get("/services-data-storytelling", (req, res) => {
+  res.sendFile(path.join(__dirname + "/dist/services-data-storytelling.html"));
+});
+
+app.get("/services-data-visualization", (req, res) => {
+  res.sendFile(path.join(__dirname + "/dist/services-data-visualization.html"));
+});
 
 // app.listen(port, () => {
 //   console.log(`Example app listening on port ${port}`);
